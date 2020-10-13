@@ -27,7 +27,7 @@ This project creates a secret social media platform where only authorized member
 👤 **Diego Lira**
 
 - Github: [@lirad](https://github.com/lirad)
-- Twitter: [@dantewuhu](https://twitter.com/lirad)
+- Twitter: [@lirad](https://twitter.com/lirad)
 - Linkedin: [Diego de Araujo Lira](https://www.linkedin.com/in/diegoalira/)
 
 ## 🤝 Contributing
