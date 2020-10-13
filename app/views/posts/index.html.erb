@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Posts
+      </h1>
+      <h2 class="subtitle">
+      <%if user_signed_in? %>
+        <%= link_to '+ New Post', new_post_path, class:"button is-info" %>
+      <% else %>  
+        Sign in or Sing up to create new posts
+      <%end%>  
+      </h2>
+    </div>
+  </div>
+</section>
 
-<h1>Posts</h1>
+<div class="columns">
+<div class="column is-half is-offset-one-quarter">
+<% @posts.each do |post| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="box">
+      <div class="media-content">
+        <p class="title is-4 mb-1"><%= post.title %></p>
+        <p class="subtitle is-6 has-text-info mt-0 mb-2">by <strong ><%= post.user.name %></strong></p>
+      </div>
+    
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-info mt-2 mr-2" %>
+      <%= post.body %>
+    </div>
+
+<% end %>
+</div>
+
+
 
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
