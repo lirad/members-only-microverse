@@ -18,10 +18,6 @@ This project creates a secret social media platform where only authorized member
 - <code>$ bundle install</code>
 - <code>$ rails server</code>
 
-## Run Test <a name = "Testing"></a>
-- Rspec :heavy_check_mark:
-- $ rspec
-
 ## ✒️ Author <a name = "author"></a>
 
 👤 **Diego Lira**
