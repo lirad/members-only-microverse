@@ -5,12 +5,48 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
   <body>
+  <div class="mb-0">
+    <% if flash[:notice] %>
+    <div class="notification is-primary global-notification">
+      <p class="notice"><%= notice %> </p>
+    </div>
+  <% end %>
+   <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+      <p class="notice"><%= alert %> </p>
+    </div>
+  <% end %>
+  </div>
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <h1 class="is-size-4">Members Only</h1>
+    </a>
+  </div>
+     <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <%if !user_signed_in? %>
+            <%= link_to "Sing Up", new_user_registration_path, class: "button is-primary" %>
+            <%= link_to "Log in", new_user_session_path, class: "button is-light" %>
+         
+         <%else %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-primary" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
+<div class="container">
     <%= yield %>
+</div>
   </body>
 </html>

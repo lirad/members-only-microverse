@@ -1,0 +1,44 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Sign up
+      </h1>
+      <h2 class="subtitle">
+     Create an account to see authors and create posts
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="columns">
+<div class="column is-half is-offset-one-quarter ">
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                label_html:{class:"label"}, input_html: { autocomplete: "name", class:"input" }, wrapper: false %>
+    <%= f.input :email,
+                required: true,
+                label_html:{class:"label"}, input_html: { autocomplete: "email", class:"input" }, wrapper: false %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                label_html:{class:"label"}, input_html: { autocomplete: "new-password", class:"input" }, wrapper: false  %>
+    <%= f.input :password_confirmation,
+                required: true,
+                label_html:{class:"label"}, input_html: { autocomplete: "new-password", class:"input" }, wrapper: false  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class:"button is-info  mt-2 is-medium" %>
+  </div>
+  </div>
+  
+  </div>
+  
+<% end %>
+
+
