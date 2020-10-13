@@ -24,9 +24,7 @@
         <p class="title is-4 mb-1"><%= post.title %></p>
         <%if user_signed_in? %>
         <p class="subtitle is-6 has-text-info mt-0 mb-2">by <strong ><%= post.user.name %></strong></p>
-        <%else%>
-        <p class="subtitle is-6 has-text-info mt-0 mb-2">by <strong> Anonymous</strong></p>
-        <%end %>
+        <% end %>
       </div>
     
 
