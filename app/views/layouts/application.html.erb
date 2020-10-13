@@ -11,6 +11,29 @@
   </head>
 
   <body>
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <h1 class="is-size-4">Members Only</h1>
+    </a>
+  </div>
+     <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          
+            <%= link_to "Sing Up", new_user_registration_path, class: "button is-primary"%>
+          
+          
+            <%= link_to "Log in", new_user_session_path, class: "button is-light"%>
+          
+
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-info mt-2 mr-2" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>
