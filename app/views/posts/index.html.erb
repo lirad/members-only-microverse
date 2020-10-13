@@ -8,7 +8,7 @@
       <%if user_signed_in? %>
         <%= link_to '+ New Post', new_post_path, class:"button is-info" %>
       <% else %>  
-        Sign in or Sing up to create new posts
+        Sign in or Sing up to create new posts and view authors
       <%end%>  
       </h2>
     </div>
@@ -22,7 +22,11 @@
     <div class="box">
       <div class="media-content">
         <p class="title is-4 mb-1"><%= post.title %></p>
+        <%if user_signed_in? %>
         <p class="subtitle is-6 has-text-info mt-0 mb-2">by <strong ><%= post.user.name %></strong></p>
+        <%else%>
+        <p class="subtitle is-6 has-text-info mt-0 mb-2">by <strong> Anonymous</strong></p>
+        <%end %>
       </div>
     
 

@@ -4,12 +4,19 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
+    <%= f.input :title, 
+                required: true,
+                autofocus: true,
+                label_html:{class:"label"}, input_html: { autocomplete: "name", class:"input" }, wrapper: false %>
+    
+    <%= f.input :body,
+    required: true,
+                autofocus: true,
+                label_html:{class:"label"}, input_html: { autocomplete: "name", type:"textarea", class:"textarea" }, wrapper: false  %>
     
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"button is-info mt-2" %>
   </div>
 <% end %>

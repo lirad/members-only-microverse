@@ -1,20 +1,34 @@
-<h2>Log in</h2>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Login
+      </h1>
+      <h2 class="subtitle">
+     Login to see authors and create posts
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="columns">
+<div class="column is-half is-offset-one-quarter ">
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                label_html:{class:"label"}, input_html: { autocomplete: "email", class:"input" }, wrapper: false %>
     <%= f.input :password,
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                label_html:{class:"label"}, input_html: { autocomplete: "current-password", class:"input" }, wrapper: false %>
+    
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class:"button is-info  mt-2 is-medium"  %>
+  </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
